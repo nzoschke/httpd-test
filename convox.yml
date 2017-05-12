@@ -1,1 +1,10 @@
-oops
+services:
+  web:
+    image: httpd
+    port: 80
+workflows:
+  change:
+    create:
+      - run: 'false'
+    update:
+      - run: 'false'
