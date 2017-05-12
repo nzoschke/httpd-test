@@ -1,4 +1,6 @@
 web:
+  cpu_shares: 10
+  mem_limit: 50MB
   image: httpd
   ports:
-    - 3000:80
+    - 80:80

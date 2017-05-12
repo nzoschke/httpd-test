@@ -1,0 +1,18 @@
+services:
+  web:
+    image: httpd
+    port: 80
+workflows:
+  change:
+    create:
+      - create: staging/httpd-qa-$branch
+      - deploy: staging/httpd-qa-$branch
+    update:
+      - create: staging/httpd-qa-$branch
+      - deploy: staging/httpd-qa-$branch
+    close:
+      - delete: staging/httpd-qa-$branch
+  merge:
+    master:
+      - create: staging/httpd-production
+      - deploy: staging/httpd-production

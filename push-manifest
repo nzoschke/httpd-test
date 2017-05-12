@@ -1,0 +1,7 @@
+#!/bin/bash
+set -x
+
+cp $1* convox.yml
+git add *
+git commit -m "$1" --allow-empty
+git push origin
