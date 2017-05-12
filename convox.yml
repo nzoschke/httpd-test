@@ -5,6 +5,6 @@ services:
 workflows:
   change:
     create:
-      - run: 'false'
+      - run: echo it works
     update:
-      - run: 'false'
+      - run: echo it works
