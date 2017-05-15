@@ -1,0 +1,10 @@
+services:
+  web:
+    image: httpd
+    port: 80
+workflows:
+  change:
+    create:
+      - test: staging
+    update:
+      - test: staging
