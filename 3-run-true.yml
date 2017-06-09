@@ -1,7 +1,7 @@
 services:
   web:
     image: httpd
-    port: 80
+    port: http:80
 workflows:
   change:
     create:
