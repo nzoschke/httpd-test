@@ -5,14 +5,14 @@ services:
 workflows:
   change:
     create:
-      - create: staging/httpd-qa-$branch
-      - deploy: staging/httpd-qa-$branch
+      - test: staging
+      - deploy: staging/httpd-$branch
     update:
-      - create: staging/httpd-qa-$branch
-      - deploy: staging/httpd-qa-$branch
+      - test: staging
+      - deploy: staging/httpd-$branch
     close:
-      - delete: staging/httpd-qa-$branch
+      - delete: staging/httpd-$branch
   merge:
     master:
-      - create: staging/httpd-production
-      - deploy: staging/httpd-production
+      - create: staging/httpd-staging
+      - deploy: staging/httpd-staging
